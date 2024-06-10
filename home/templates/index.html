@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'dist/output.css' %}">
+  <title>Home</title>
+</head>
+<body>
+    {% block content %}
+    <script src="{% static 'src/js/cart.js' %}"></script>
+    <script src="{% static 'src/js/index.js' %}"></script>
+
+    <div class="container mx-auto px-6">
+        <div class="relative mb-3 max-w-lg mx-auto">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
+                  <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+
+                    <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline" type="text" placeholder="Search">
+        </div>
+      <div 
+        class="h-64 transition duration-200 transform rounded-md overflow-hidden bg-cover bg-center"
+        style="background-image: url('https://images.unsplash.com/photo-1649771543037-916e2702008a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1484&q=80')">
+        <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+            <div class="px-10 max-w-xl">
+                <h2 class="text-2xl text-white font-semibold">Sport</h2>
+                <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
+                <button class=" flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                    <span>Shop Now</span>
+                    <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                  </button>
+            </div>
+        </div>
+      </div>
+      <div class="md:flex mt-8 md:-mx-4">
+        <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
+            <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                <div class="px-10 max-w-xl">
+                    <h2 class="text-2xl text-white font-semibold">Back Pack</h2>
+                    <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
+                    <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                        <span>Shop Now</span>
+                        <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </button>
+                </div>
+            </div>
+          </div>
+          <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+            <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                <div class="px-10 max-w-xl">
+                    <h2 class="text-2xl text-white font-semibold">Games</h2>
+                    <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
+                    <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                        <span>Shop Now</span>
+                        <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+        <!-- CATEGORY HOME PAGE -->
+      <div class="mt-16">
+          <div id="pointup" class="text-gray-600 text-2xl font-medium mb-20">Fashions</div>
+          <div id="fashionup" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6 opacity-50 transition duration-500 transform"></div>
+      </div>
+
+      <div class="pb-16">
+        <div id="pointup2" class="text-gray-600 text-2xl font-medium pb-3 mb-20">Sports</div>
+        <div id="Sport" class="transform transition duration-500 grid grid-cols-4 gap-4">
+        {% for sport in data_sports %}
+                <div class="w-full max-w-sm shadow-md rounded-md overflow-hidden">
+                    <div class="flex justify-end items-end h-56 w-full bg-cover"
+                         style="background-image: url('{{sport.image.url}}');">
+                        <button class="addcartbtn p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                 stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path
+                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+          
+                    <div class="px-5 py-3">
+                        <h3 class="text-gray-700 uppercase">{{ sport.productname }}</h3>
+                        <span class="text-gray-500 mt-2">{{ sport.price }}</span>
+                    </div>
+                </div>
+          {% endfor %}
+        </div>
+      
+    
+        </div>
+    </div>
+      
+  </div>
+
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% extends 'basehome.html' %}{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% block extended_content %}
+    <div class="shadow-lg bg-slate-100 p-5 w-full h-full">
+      <div class="text-xl font-bold mb-3 text-purple-900">
+        SET STORE INFORMATION
+      </div>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="flex flex-col px-10 py-3">
+          <label for="">Shop Name</label>
+          <input
+            class="mb-2 border-slate-500 border rounded-sm px-2 py-1"
+            type="text"
+          />
+          <label for="">Shop Address</label>
+          <textarea
+            class="mb-2 border-slate-500 border rounded-sm px-2 py"
+            name=""
+            id=""
+            cols="10"
+            rows="5"
+          ></textarea>
+          <label for="">Delevery Service</label>
+          <select
+            name=""
+            id=""
+            class="mb-2 border-slate-500 border rounded-sm px-2 py-1"
+          >
+            <option value="">JNT Express</option>
+            <option value="">Bapuk Superjet</option>
+            <option value="">Ducati FastRun</option>
+            <option value="">Usaint Bold Express</option>
+            <option value="">Hemat Express</option>
+            <option value="">Mahal DIkit ndak Ngaruh</option>
+          </select>
+          <label for="">Email</label>
+          <input
+            type="email"
+            class="mb-2 border-slate-500 border rounded-sm px-2 py-1"
+          />
+          <label for="">Phone Number</label>
+          <input
+            type="text"
+            class="mb-2 border rounded-sm px-2 py-1 border-slate-500"
+          />
+          <button
+            type="submit"
+            class="bg-purple-900 text-white py-1 rounded-md"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+    {% endblock%}
+  </body>
+</html>

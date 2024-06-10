@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'dist/output.css' %}">
+</head>
+<body>
+  <script src="{% static 'src/js/index.js' %}"></script>
+
+  <div class="h-full w-full">
+    <div class="area h-full">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container flex justify-center items-center flex-col h-screen relative">
+        <div class="flex items-center flex-wrap p-2 max-w-max text-purple-950 -translate-x-8 h-screen absolute w-full">
+          <div id="rotlogo" class="flex pb-3 justify-center items-center bg-slate-50 rounded-full h-32 w-32  text-8xl rotate-180 z-40 duration-700 transition-all absolute filter drop-shadow-xl">💱</div>
+          <div id="logo2" class="flex justify-center items-center rounded-full text-8xl z-0 scale-150 h-36 w-36  -translate-x-[185px] duration-700 transition-all absolute filter drop-shadow-xl bg-blue-500 opacity-0 delay-300">💱</div>
+          <div id="rottext" class="duration-700 opacity-0 transition-all font-semibold text-5xl text-slate-50 absolute ">Bapukpedia</div>
+        </div>
+        <div  class="justify-center items-center flex-col">
+          <div id="second" class="max-w-max translate-x-24 -translate-y-5 opacity-0 duration-500 transition-all flex flex-col">
+            <div class="flex mb-2 filter drop-shadow-xl">
+              <div class="text-3xl text-white mr-2">Hello</div>
+              <div class="text-3xl animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white text-white font-semibold pr-1 max-w-max">{{Username}}</div>
+            </div>
+            <div class="flex mb-2 filter drop-shadow-xl">
+            <div class=" text-4xl text-white font-bold max-w-max ">Welcome</div>
+            <div class="animate-waving-hand text-3xl">👋</div>
+            </div>
+            <div class="font-semibold text-slate-50 text-center">
+              <h1 class="text-xl mb-2 filter drop-shadow-xl">to The Official Bapukpedia Website </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button id="btn" class="p-2 bg-purple-900 text-slate-100 shadow-md rounded-md font-semibold cursor-pointer hover:bg-purple-800 absolute top-[356px] opacity-0 right-[675px] duration-500 transition-all">
+      <a href="{% url 'home' %}" >Get Started</a>
+    </button>
+  </div>
+
+  
+</body> 
+</html>

@@ -1,0 +1,73 @@
+{% extends 'basehome.html' %}{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'dist/output.css' %}" />
+  </head>
+  <body>
+    {% block extended_content %}
+    <div class="w-[70%]">
+      <div class="mt-2 border-b pb-2">
+        <span class="font-bold text-purple-950 text-xl">Profile</span>
+        <br />
+        Kelola informasi profil Anda untuk mengontrol, melindungi dan
+        mengamankan akun
+      </div>
+      <div class="pr-24 gap-y-3 flex flex-col mt-5">
+        <div class="flex justify-end gap-x-4">
+          <div class="p-2 font-bold">Username</div>
+          <div class="w-[70%] p-2">username</div>
+        </div>
+        <div class="flex justify-end gap-x-4">
+          <div class="p-2 font-bold">Name</div>
+          <input type="text" class="w-[70%] p-2" />
+        </div>
+        <div class="flex justify-end gap-x-4">
+          <div class="p-2 font-bold">Email</div>
+          <div class="w-[70%] p-2 flex">
+            <div>example@gmai.com</div>
+            <div>edit</div>
+          </div>
+        </div>
+        <div class="flex justify-end gap-x-4">
+          <div class="p-2 font-bold">Nomor Telepon</div>
+          <div class="w-[70%] p-2">232338888***</div>
+        </div>
+        <div class="flex justify-end gap-x-4">
+          <div class="p-2 font-bold">Nama Toko</div>
+          <input type="text" class="w-[70%] p-2" />
+        </div>
+        <div class="flex justify-end gap-x-4">
+          <div class="p-2 font-bold">Jenis Kelamin</div>
+          <div class="w-[70%] p-2">
+            <input type="radio" value="laki-laki" /> Laki-Laki
+            <input type="radio" value="perempuan" /> Perempuan
+          </div>
+        </div>
+        <div class="flex justify-end gap-x-4">
+          <div class="p-2 font-bold">Tanggal Lahir</div>
+          <input type="date" class="w-[70%] p-2" />
+        </div>
+        <button
+          class="bg-blue-500 text-white font-bold py-2 rounded-sm w-[30%] translate-x-10"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <div class="w-[30%] flex flex-col items-center border-l pt-32">
+      <div
+        class="w-[140px] h-[140px] object-cover rounded-full overflow-hidden mb-3"
+      >
+        <img src="{% static 'src/img/noprofile.png' %}" alt="" />
+      </div>
+      <button class="p-2 rounded-md">Pilih Gambar</button>
+      <div class="">Ukuran gambar: maks. 1 MB</div>
+      <div class="">Format gambar: .JPEG, .PNG</div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
